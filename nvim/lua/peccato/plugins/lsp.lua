@@ -52,6 +52,44 @@ function M.setup()
         callback = lsp_keymaps,
     })
 
+        vim.lsp.config("lua_ls", {
+        filetypes = { "lua" },
+
+        root_markers = {
+            ".luarc.json",
+            ".luarc.jsonc",
+            ".luacheckrc",
+            ".stylua.toml",
+            "stylua.toml",
+            "selene.toml",
+            "selene.yml",
+            ".git",
+        },
+
+        settings = {
+            Lua = {
+                runtime = {
+                    version = "LuaJIT",
+                },
+
+                diagnostics = {
+                    globals = {
+                        "vim",
+                    },
+                },
+
+                workspace = {
+                    checkThirdParty = false,
+                    library = vim.api.nvim_get_runtime_file("", true),
+                },
+
+                telemetry = {
+                    enable = false,
+                },
+            },
+        },
+    })
+
     local rust_analyzer = "/usr/bin/rust-analyzer"
 
     if vim.fn.executable(rust_analyzer) ~= 1 then

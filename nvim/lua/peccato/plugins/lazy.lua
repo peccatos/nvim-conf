@@ -50,6 +50,44 @@ require("lazy").setup({
     },
 
     {
+    "mason-org/mason.nvim",
+    dependencies = {
+        "mason-org/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
+    config = function()
+        require("peccato.plugins.mason")
+    end,
+    },
+
+    {
+    "stevearc/conform.nvim",
+    config = function()
+        require("peccato.plugins.conform")
+    end,
+    },
+
+    {
+    "folke/todo-comments.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim",
+        "folke/trouble.nvim",
+    },
+    config = function()
+        require("peccato.plugins.todo")
+    end,
+    },
+
+    {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+        require("peccato.plugins.toggleterm")
+    end,
+    },
+
+    {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
