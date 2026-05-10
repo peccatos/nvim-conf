@@ -1,0 +1,5 @@
+require("peccato.core.options")
+require("peccato.core.keymaps")
+require("peccato.core.autocmds")
+require("peccato.core.notepad_mode")
+require("peccato.plugins.lazy")
